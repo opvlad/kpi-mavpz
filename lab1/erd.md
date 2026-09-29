@@ -28,7 +28,7 @@ erDiagram
         enum status
     }
 
-    USERS ||..|{ BOOKINGS : makes
-    USERS ||..|{ APARTMENTS : owns
-    APARTMENTS ||..|{ BOOKINGS : has
+    USERS ||..o{ BOOKINGS : makes
+    USERS ||..o{ APARTMENTS : owns
+    APARTMENTS ||..o{ BOOKINGS : has
 ```
