@@ -1,3 +1,4 @@
+```mermaid
 erDiagram
     USERS {
         int id PK
@@ -30,3 +31,4 @@ erDiagram
     USERS ||..|{ BOOKINGS : makes
     USERS ||..|{ APARTMENTS : owns
     APARTMENTS ||..|{ BOOKINGS : has
+```
