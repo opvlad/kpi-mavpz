@@ -1,7 +1,7 @@
-<div hidden>
 ```plantuml
-@startuml ucd
+@startuml
 left to right direction
+
 actor User
 actor Guest
 actor Host
@@ -70,5 +70,3 @@ PaymentProcessor --> "Send Status Webhook"
 NotificationService --> "Send Notification"
 @enduml
 ```
-</div>
-![](ucd.svg)
