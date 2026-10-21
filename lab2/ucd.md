@@ -13,20 +13,20 @@ Host --|> User
 
 
 rectangle Booking {
-    usecase "Authenticate"
-    usecase "Search Apartments"
-    usecase "Filter Apartments"
-    usecase "Create Booking"
-    usecase "Select Dates"
-    usecase "Pay for the Booking"
-    usecase "Cancel Booking"
-    usecase "Contact Host"
+    usecase "UC-1 Authenticate"
+    usecase "UC-2 Search Apartments"
+    usecase "UC-2.1 Filter Apartments"
+    usecase "UC-3 Create Booking"
+    usecase "UC-3.1 Select Dates"
+    usecase "UC-4 Pay for the Booking"
+    usecase "UC-5 Cancel Booking"
+    usecase "UC-6 Contact Host"
 
-    usecase "Manage Listing"
-    usecase "List an Apartment"
-    usecase "Delist an Apartment"
-    usecase "Manage Availability"
-    usecase "View Statistic"
+    usecase "UC-7 Manage Listing"
+    usecase "UC-7.1 List an Apartment"
+    usecase "UC-7.2 Delist an Apartment"
+    usecase "UC-7.3 Manage Availability"
+    usecase "UC-8 View Statistic"
 
 }
 
@@ -41,25 +41,25 @@ rectangle Resend {
 }
 
 
-User --> "Authenticate"
+User --> "UC-1 Authenticate"
 
 
-Guest --> "Search Apartments"
-Guest --> "Create Booking"
-Guest --> "Pay for the Booking"
-Guest --> "Cancel Booking"
-Guest --> "Contact Host"
+Guest --> "UC-2 Search Apartments"
+Guest --> "UC-3 Create Booking"
+Guest --> "UC-4 Pay for the Booking"
+Guest --> "UC-5 Cancel Booking"
+Guest --> "UC-6 Contact Host"
 
-"Search Apartments" <-- "Filter Apartments" : extend
-"Create Booking" --> "Select Dates" : include
+"UC-2 Search Apartments" <-- "UC-2.1 Filter Apartments" : extend
+"UC-3 Create Booking" --> "UC-3.1 Select Dates" : include
 
 
-Host --> "Manage Listing"
-Host --> "View Statistic"
+Host --> "UC-7 Manage Listing"
+Host --> "UC-8 View Statistic"
 
-"Manage Listing" <-- "List an Apartment" : extend
-"Manage Listing" <-- "Delist an Apartment" : extend
-"Manage Listing" <-- "Manage Availability" : extend
+"UC-7 Manage Listing" <-- "UC-7.1 List an Apartment" : extend
+"UC-7 Manage Listing" <-- "UC-7.2 Delist an Apartment" : extend
+"UC-7 Manage Listing" <-- "UC-7.3 Manage Availability" : extend
 
 
 PaymentProcessor --> "Process Payment"
