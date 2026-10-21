@@ -46,12 +46,12 @@ User --> "Authenticate"
 
 Guest --> "Search Apartments"
 Guest --> "Create Booking"
+Guest --> "Pay for the Booking"
 Guest --> "Cancel Booking"
 Guest --> "Contact Host"
 
 "Search Apartments" <-- "Filter Apartments" : extend
 "Create Booking" --> "Select Dates" : include
-"Create Booking" -- "Pay for the Booking" : include
 
 
 Host --> "Manage Listing"
