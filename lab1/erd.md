@@ -18,6 +18,7 @@ erDiagram
         varchar(100) address "required"
         enum status
         "('active', 'inactive'), required"
+        bool is_deleted "required, default=False"
     }
     BOOKINGS {
         int id PK
