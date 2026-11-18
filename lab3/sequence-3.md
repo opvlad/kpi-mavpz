@@ -8,9 +8,11 @@ guest -> API : bookingApartments
 activate API
 
 API -> DB : checkApartmentsAvailiable
+activate DB 
 DB --> API : apartments data
+deactivate DB 
 
-alt apartments are occupied
+opt apartments are occupied
 alt booking status is confirmed
 API --> guest : apartments are occupied
 else booking status is pending
