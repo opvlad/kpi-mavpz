@@ -15,7 +15,7 @@ guest -> WFP : pay
 WFP -> API : send transaction result
 alt transaction status is approved
 API -> DB : confirmBooking
-API -> Celery : sendEmail
+API ->> Celery : sendEmail
 Celery -> guest : sendEmail
 end
 API --> WFP : acceptTransaction
