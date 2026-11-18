@@ -3,11 +3,10 @@
 @startuml
 
 actor Guest as guest
-activate API
-activate DB
-
 
 guest -> API : bookingApartments
+activate API
+
 API -> DB : checkApartmentsAvailiable
 DB --> API : apartments data
 
@@ -18,9 +17,8 @@ else booking status is pending
 API --> guest : apartments are occupied + offer notice about vacating
 end
 end
-
-
 deactivate API
-deactivate DB
+
+
 @enduml
 ```
