@@ -3,26 +3,25 @@
 @startuml
 
 actor Guest as guest
+activate API
 
 guest -> API : confirmBooking
-activate API
 API -> DB : request booking data
 DB --> API : send booking data
 
 alt confirmation time is valid
-API -> guest : send invoce
+API --> guest : send invoce
 guest -> WFP : pay
 WFP -> API : send transaction result
-
 alt transaction status is approved
 API -> DB : confirmBooking
 end
 API --> WFP : acceptTransaction
 
-
 else confirmation time is expired
+API --> guest : inform confirmation time is expired
 
 end
-
+deactivate API
 @enduml
 ```
