@@ -19,6 +19,7 @@ erDiagram
         enum status
         "('active', 'inactive'), required"
         bool is_deleted "required, default=False"
+        bool require_confirmation "required"
     }
     BOOKINGS {
         int id PK
