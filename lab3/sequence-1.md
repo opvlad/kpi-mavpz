@@ -15,11 +15,14 @@ guest -> WFP : pay
 WFP -> API : send transaction result
 alt transaction status is approved
 API -> DB : confirmBooking
+API -> Celery : sendEmail
+Celery -> guest : sendEmail
 end
 API --> WFP : acceptTransaction
 
 else confirmation time is expired
 API --> guest : inform confirmation time is expired
+
 
 end
 deactivate API
