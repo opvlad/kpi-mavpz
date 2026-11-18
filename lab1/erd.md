@@ -29,6 +29,7 @@ erDiagram
         decimal total_price "required"
         enum status
         "('pending', 'confirmed', 'cancelled'), required"
+        timestamp expired_at
     }
 
     USERS ||..o{ BOOKINGS : makes
