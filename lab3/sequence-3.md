@@ -4,12 +4,12 @@
 
 actor Guest as guest
 
-guest -> API : bookingApartments
+guest -> API : booking apartment
 activate API
 
-API -> DB : checkApartmentsAvailable
+API -> DB : getApartment
 activate DB 
-DB --> API : apartments data
+DB --> API : apartment
 deactivate DB 
 
 opt apartments are occupied

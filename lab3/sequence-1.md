@@ -7,13 +7,13 @@ actor Guest as guest
 guest -> API : confirmBooking
 
 activate API
-API -> DB : request booking data
+API -> DB : getBooking
 activate DB
-DB --> API : send booking data
+DB --> API : booking
 deactivate DB
 
 alt confirmation time is valid
-API --> guest : send invoice
+API --> guest : sendInvoice
 else confirmation time is expired
 API --> guest : inform confirmation time is expired
 end
@@ -22,7 +22,7 @@ deactivate API
 opt confirmation time is valid
 guest -> WFP : pay
 activate WFP
-WFP -> API : send transaction result
+WFP -> API : paymentCallback
 activate API
 opt transaction status is approved
 activate DB

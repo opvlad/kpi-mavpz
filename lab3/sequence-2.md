@@ -4,18 +4,18 @@
 
 actor Guest as guest
 
-guest -> API : bookingApartment
+guest -> API : booking apartment
 
 activate API
-API -> DB : requestApartmentData
+API -> DB : getApartment
 activate DB
-DB --> API : apartmentData
+DB --> API : apartment
 deactivate DB
 
 opt apartment is available
 API -> DB : createBooking
 activate DB 
-DB --> API : booking data 
+DB --> API : booking 
 deactivate DB
 alt apartment requires confirmation
 API ->> Celery : sendEmail
