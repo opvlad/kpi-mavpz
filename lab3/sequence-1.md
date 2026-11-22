@@ -23,16 +23,19 @@ opt confirmation time is valid
 guest -> WFP : pay
 activate WFP
 WFP -> API : send transaction result
-deactivate WFP
 activate API
 opt transaction status is approved
+activate DB
 API -> DB : confirmBooking
+DB --> API : acceptConfirm
+deactivate DB
 API ->> Celery : sendEmail
 activate Celery
 Celery -> guest : sendEmail
 deactivate Celery
 end
 API --> WFP : acceptTransaction
+deactivate WFP
 deactivate API
 end
 
