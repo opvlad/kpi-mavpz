@@ -12,7 +12,7 @@ activate DB
 DB --> API : apartmentData
 deactivate DB
 
-opt apartment is availiable
+opt apartment is available
 API -> DB : createBooking
 activate DB 
 DB --> API : booking data 
@@ -23,7 +23,7 @@ activate Celery
 API --> guest : booking is created
 Celery -> guest : sendEmail
 deactivate Celery
-else apartment does't require confirmation
+else apartment doesn't require confirmation
 API --> guest : booking is created
 end
 end

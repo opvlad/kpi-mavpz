@@ -13,7 +13,7 @@ DB --> API : send booking data
 deactivate DB
 
 alt confirmation time is valid
-API --> guest : send invoce
+API --> guest : send invoice
 else confirmation time is expired
 API --> guest : inform confirmation time is expired
 end
