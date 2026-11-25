@@ -19,6 +19,7 @@ erDiagram
         enum status
         "('active', 'inactive'), required"
         bool is_deleted "required, default=False"
+        bool require_confirmation "required"
     }
     BOOKINGS {
         int id PK
@@ -29,6 +30,7 @@ erDiagram
         decimal total_price "required"
         enum status
         "('pending', 'confirmed', 'cancelled'), required"
+        timestamp expired_at
     }
 
     USERS ||..o{ BOOKINGS : makes
